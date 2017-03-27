@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { LoginResult } from './../../models/loginResult';
+import { AuthEvent } from './../../models/authEvent';
 import { UserService } from './../../services/user.service';
 import { LoginCredentials } from './../../models/loginCredentials';
 import { Component } from '@angular/core'
@@ -10,9 +10,10 @@ import { Component } from '@angular/core'
 })
 export class LoginComponent {
 
-    loginResult: LoginResult = {
+    authEvent: AuthEvent = {
         status: null,
-        message: null
+        message: null,
+        eventType: null
     };
 
     constructor(
@@ -26,13 +27,14 @@ export class LoginComponent {
     }
 
     onSubmit(): void {
-        this.loginResult = {
+        this.authEvent = {
             status: null,
-            message: null
+            message: null,
+            eventType: null
         };
         this.userService.login(this.credentials).subscribe((loginResult) => {
-            this.loginResult = loginResult;
-            if (this.loginResult.status === "ok") {
+            this.authEvent = loginResult;
+            if (this.authEvent.status === "ok") {
                 this.router.navigate(["/dashboard"]);
             }
             //console.log("Login fatto ", loginResult);
