@@ -1,3 +1,6 @@
+import { AlreadyAuthGuard } from './services/alreadyAuthGuard.service';
+import { AuthGuard } from './services/authguard.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,7 +18,8 @@ import { LoginComponent } from './components/login/login.component'
     AppComponent,
     HomePageComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
       ],
   imports: [   //moduli dai quali dipende
     BrowserModule,
@@ -25,7 +29,7 @@ import { LoginComponent } from './components/login/login.component'
     routes
 
   ],
-  providers: [UserService], //Cosa fornisce solo Service
+  providers: [UserService, AuthGuard, AlreadyAuthGuard], //Cosa fornisce solo Service
   bootstrap: [AppComponent]  //componente che fa partire il modulo (punti di accesso)
 })
 export class AppModule { }

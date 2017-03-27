@@ -7,7 +7,7 @@ function ciao(persona: Person) {
     return "xa"+persona.nome +" " + persona.cognome 
 }
 
-var utente = {
+var utente = { //fa la corrispondenza con gli attributi dell'interfaccia, perciò è di tipo Person
     nome:"Mario",
     cognome:"Rossi"
 } 

@@ -7,7 +7,7 @@
       </div>
 
       <form (ngSubmit)="onSubmit()" materialize class="card-content white">
-        <div class="row"> 
+        <div class="row">
 
           <div class="input-field col s12">
             <input [(ngModel)]="credentials.username" name="user" id="user" type="text" class="validate">
@@ -17,6 +17,13 @@
           <div class="input-field col s12">
             <input [(ngModel)]="credentials.password" name="pass" id="pass" type="password" class="validate">
             <label for="pass">Password</label>
+          </div>
+
+          <div class="col s12" *ngIf="loginResult.status === 'ko'">
+            <div class="card-panel red darken-4 center-align">
+              <span class="white-text">Username o password errati!
+          </span>
+            </div>
           </div>
 
           <div class="col s12 center">
