@@ -1,3 +1,6 @@
+import { PostService } from './services/post.service';
+import { PostListComponent } from './components/postlist/postlist.component';
+import { PostComponent } from './components/post/post.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { AlreadyAuthGuard } from './services/alreadyAuthGuard.service';
 import { AuthGuard } from './services/authguard.service';
@@ -9,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
 import { routes } from "./app.routing"
+
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/homepage/homepage.component'
@@ -23,7 +27,9 @@ import { RegistrationComponent } from './components/registration/registration.co
     LoginComponent,
     DashboardComponent,
     TruncatePipe,
-    RegistrationComponent
+    RegistrationComponent,
+    PostComponent,
+    PostListComponent
   ],
   imports: [   //moduli dai quali dipende
     BrowserModule,
@@ -34,7 +40,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     routes
 
   ],
-  providers: [UserService, AuthGuard, AlreadyAuthGuard], //Cosa fornisce solo Service
+  providers: [UserService, AuthGuard, AlreadyAuthGuard, PostService], //Cosa fornisce solo Service
   bootstrap: [AppComponent]  //componente che fa partire il modulo (punti di accesso)
 })
 export class AppModule { }

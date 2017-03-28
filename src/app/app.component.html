@@ -3,7 +3,7 @@
   <ul id="user-dropdown" class="dropdown-content">
     <li><a (click)="logout()">Logout</a></li>
   </ul>
- 
+
 
   <nav>
     <div class="nav-wrapper teal darken-1">
@@ -13,9 +13,11 @@
       </ul>
 
       <ul class="right" [hidden]="!isLoggedIn">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a   routerLink="/dashboard" class="active">Dashboard</a>
+        </li>
         <li>
-          <a materialize="dropdown" 
-          data-beloworigin="true" data-activates="user-dropdown" class="dropdow-button">
+          <a materialize="dropdown" data-beloworigin="true" data-activates="user-dropdown" class="dropdow-button">
               {{user ? user.username : 'N.D.'}}</a>
         </li>
       </ul>
