@@ -5,10 +5,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
-import {routes} from "./app.routing"
+import { routes } from "./app.routing"
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/homepage/homepage.component'
@@ -24,12 +24,13 @@ import { RegistrationComponent } from './components/registration/registration.co
     DashboardComponent,
     TruncatePipe,
     RegistrationComponent
-      ],
+  ],
   imports: [   //moduli dai quali dipende
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
+    ReactiveFormsModule,
     routes
 
   ],

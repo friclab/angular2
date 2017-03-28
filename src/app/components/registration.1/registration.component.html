@@ -7,28 +7,28 @@
         <h2 class="hide-on-small-only header ligjt white-text">GRegistrazione</h2>
       </div>
 
-      <form materialize (ngSubmit)="onSubmit($event)" class="card-content white" [formGroup]="registrationForm">
+      <form materialize class="card-content white" #registrationForm="ngForm">
         <div class="row">
 
           <div class="input-field col s6">
-            <input name="name" formControlName="name" id="name" type="text" class="validate">
+            <input required [(ngModel)]="form.name" name="name" id="name" type="text" class="validate">
             <label for="name">Nome</label>
           </div>
 
           <div class="input-field col s6">
-            <input name="lastname"  formControlName="lastname" id="lastname" type="text" class="validate">
+            <input required [(ngModel)]="form.lastname" name="lastname" id="lastname" type="text" class="validate">
             <label for="lastname">Cognome</label>
           </div>
         </div>
         <div class="row">
 
           <div class="input-field col s6">
-            <input name="email"  formControlName="email" id="email" type="email" class="validate">
+            <input required [(ngModel)]="form.email" name="email" id="email" type="email" class="validate">
             <label for="email">Email</label>
           </div>
 
           <div class="input-field col s6">
-            <input name="phone" formControlName="phone" id="phone" type="tel" class="validate">
+            <input required [(ngModel)]="form.phone" name="phone" id="phone" type="tel" class="validate">
             <label for="phone">Telefono</label>
           </div>
         </div>
@@ -36,12 +36,12 @@
         <div class="row">
 
           <div class="input-field col s6">
-            <input name="password" formControlName="password" id="password" type="password" class="validate">
+            <input required [(ngModel)]="form.password" name="password" id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
 
           <div class="input-field col s6">
-            <input name="repeatedPassword"  formControlName="repeatedPassword" id="repeatedPassword" type="password" class="validate">
+            <input required [(ngModel)]="form.repeatedPassword" name="repeatedPassword" id="repeatedPassword" type="password" class="validate">
             <label for="repeatedPassword">Ripeti password</label>
           </div>
         </div>
@@ -49,12 +49,12 @@
 
         <div class="row">
           <div class="col s12">
-            <input name="privacyTerms" formControlName="privacyTerms" id="privacyTerms" type="checkbox">
+            <input required [(ngModel)]="form.privacyTerms" name="privacyTerms" id="privacyTerms" type="checkbox">
             <label for="privacyTerms">Accetto e sottoscrivo</label>
           </div>
 
           <div class="mt-20 col s12 center-align">
-            <button type="submit" class="waves-effect waves-light btn-large">Registrati</button>
+            <button [disabled]="!registrationForm.valid" type="submit" class="waves-effect waves-light btn-large">Registrati</button>
           </div>
 
         </div>
