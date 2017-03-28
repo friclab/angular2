@@ -7,28 +7,28 @@
         <h2 class="hide-on-small-only header ligjt white-text">GRegistrazione</h2>
       </div>
 
-      <form materialize (ngSubmit)="onSubmit($event)" class="card-content white" [formGroup]="registrationForm">
+      <form materialize novalidate (ngSubmit)="onSubmit($event)" class="card-content white" [formGroup]="registrationForm">
         <div class="row">
 
           <div class="input-field col s6">
-            <input name="name" formControlName="name" id="name" type="text" class="validate">
+            <input name="name" formControlName="name" id="name" type="text" >
             <label for="name">Nome</label>
           </div>
 
           <div class="input-field col s6">
-            <input name="lastname"  formControlName="lastname" id="lastname" type="text" class="validate">
+            <input name="lastname"  formControlName="lastname" id="lastname" type="text" >
             <label for="lastname">Cognome</label>
           </div>
         </div>
         <div class="row">
 
           <div class="input-field col s6">
-            <input name="email"  formControlName="email" id="email" type="email" class="validate">
+            <input name="email"  formControlName="email" id="email" type="email" >
             <label for="email">Email</label>
           </div>
 
           <div class="input-field col s6">
-            <input name="phone" formControlName="phone" id="phone" type="tel" class="validate">
+            <input name="phone" formControlName="phone" id="phone" type="tel" >
             <label for="phone">Telefono</label>
           </div>
         </div>
@@ -36,12 +36,12 @@
         <div class="row">
 
           <div class="input-field col s6">
-            <input name="password" formControlName="password" id="password" type="password" class="validate">
+            <input name="password" formControlName="password" id="password" type="password" >
             <label for="password">Password</label>
           </div>
 
           <div class="input-field col s6">
-            <input name="repeatedPassword"  formControlName="repeatedPassword" id="repeatedPassword" type="password" class="validate">
+            <input name="repeatedPassword"  formControlName="repeatedPassword" id="repeatedPassword" type="password" >
             <label for="repeatedPassword">Ripeti password</label>
           </div>
         </div>
@@ -54,7 +54,7 @@
           </div>
 
           <div class="mt-20 col s12 center-align">
-            <button type="submit" class="waves-effect waves-light btn-large">Registrati</button>
+            <button type="submit" [disabled]="!registrationForm.valid" class="waves-effect waves-light btn-large">Registrati</button>
           </div>
 
         </div>
