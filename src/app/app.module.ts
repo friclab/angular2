@@ -1,3 +1,4 @@
+import { TruncatePipe } from './pipes/truncate.pipe';
 import { AlreadyAuthGuard } from './services/alreadyAuthGuard.service';
 import { AuthGuard } from './services/authguard.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -12,14 +13,17 @@ import {routes} from "./app.routing"
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/homepage/homepage.component'
 import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component'
-import { LoginComponent } from './components/login/login.component'
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component'
 @NgModule({ //contentiore di componenti e servizi
   declarations: [  //componenti che questo modulo fornisce
     AppComponent,
     HomePageComponent,
     PageNotFoundComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    TruncatePipe,
+    RegistrationComponent
       ],
   imports: [   //moduli dai quali dipende
     BrowserModule,
